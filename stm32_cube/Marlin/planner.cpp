@@ -832,7 +832,7 @@ void Planner::check_axes_activity() {
   // Calculate moves/second for this move. No divide by zero due to previous checks.
   float inverse_mm_s = fr_mm_s * inverse_millimeters;
 
-  int moves_queued = movesplanned();
+  uint8_t moves_queued = movesplanned();
 
   // Slow down when the buffer starts to empty, rather than wait at the corner for a buffer refill
   #if ENABLED(OLD_SLOWDOWN) || ENABLED(SLOWDOWN)
@@ -842,7 +842,7 @@ void Planner::check_axes_activity() {
     #endif
     #if ENABLED(SLOWDOWN)
       //  segment time im micro seconds
-      unsigned long segment_time = lround(1000000.0/inverse_mm_s);
+      float segment_time = lround(1000000.0/inverse_mm_s);
       if (mq) {
         if (segment_time < min_segment_time) {
           // buffer is draining, add extra time.  The amount of time added increases if the buffer is still emptied more.

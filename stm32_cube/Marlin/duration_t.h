@@ -32,8 +32,9 @@ struct duration_t {
   /**
    * @brief Constructor
    */
-  duration_t()
-    : duration_t(0) {};
+  inline duration_t() {
+    duration_t(0);
+  }
 
   /**
    * @brief Constructor

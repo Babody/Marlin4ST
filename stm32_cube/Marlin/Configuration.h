@@ -628,12 +628,12 @@
 // @section machine
 
 // Travel limits after homing (units are in mm)
-#define X_MIN_POS 0
-#define Y_MIN_POS 0
-#define Z_MIN_POS 0
-#define X_MAX_POS 200
-#define Y_MAX_POS 197 //200
-#define Z_MAX_POS 197 //200
+const float X_MIN_POS = 0;
+const float Y_MIN_POS = 0;
+const float Z_MIN_POS = 0;
+const float X_MAX_POS = 200;
+const float Y_MAX_POS = 197; //200
+const float Z_MAX_POS = 197; //200
 
 //===========================================================================
 //========================= Filament Runout Sensor ==========================
@@ -676,7 +676,7 @@
 
 // @section bedlevel
 
-#define AUTO_BED_LEVELING_FEATURE // Delete the comment to enable (remove // at the start of the line)
+// #define AUTO_BED_LEVELING_FEATURE // Delete the comment to enable (remove // at the start of the line)
 
 // Enable this feature to get detailed logging of G28, G29, M48, etc.
 // Logging is off by default. Enable this logging feature with 'M111 S32'.

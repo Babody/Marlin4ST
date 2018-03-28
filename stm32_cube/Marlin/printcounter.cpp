@@ -24,10 +24,6 @@
 #include "printcounter.h"
 #include "duration_t.h"
 
-PrintCounter::PrintCounter(): super() {
-  this->loadStats();
-}
-
 millis_t PrintCounter::deltaDuration() {
   #if ENABLED(DEBUG_PRINTCOUNTER)
     PrintCounter::debug(PSTR("deltaDuration"));
@@ -59,9 +55,13 @@ void PrintCounter::initStats() {
     PrintCounter::debug(PSTR("initStats"));
   #endif
 
-  this->loaded = true;
-  this->data = { 0, 0, 0, 0, 0.0 };
-
+  this->loaded = true;  
+  this->data.totalPrints        = 0;
+  this->data.finishedPrints     = 0;
+  this->data.printTime          = 0;
+  this->data.longestPrint       = 0;
+  this->data.filamentUsed       = 0.0;
+  
   this->saveStats();
   // BDI  :  To change :: eeprom_write_byte((uint8_t *) this->address, 0x16);
 }

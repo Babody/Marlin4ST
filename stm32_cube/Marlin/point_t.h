@@ -45,8 +45,9 @@ struct point_t {
    * @param x The x-coordinate of the point.
    * @param y The y-coordinate of the point.
    */
-  point_t(float const x, float const y)
-    : point_t(x, y, NAN, NAN) {}
+  inline point_t(float const x, float const y) {
+    point_t(x, y, NAN, NAN);
+  }
 
   /**
    * @brief Three dimensional point constructor
@@ -55,8 +56,9 @@ struct point_t {
    * @param y The y-coordinate of the point.
    * @param z The z-coordinate of the point.
    */
-  point_t(float const x, float const y, float const z)
-    : point_t(x, y, z, NAN) {}
+  inline point_t(float const x, float const y, float const z) {
+    point_t(x, y, z, NAN);
+  }
 
   /**
    * @brief Tree dimensional point constructor with extrusion length

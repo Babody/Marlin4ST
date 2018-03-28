@@ -185,10 +185,11 @@
         </option>
         <option>
           <name>CCDefines</name>
-          <state>STM32F411xE</state>
+          <state>USE_HAL_DRIVER</state>
+          <state>STM32F401xE</state>
+          <state>STM_3DPRINT</state>
           <state>MARLIN</state>
           <state>NO_WIFI</state>
-          <state>STM_3DPRINT</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
